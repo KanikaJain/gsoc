@@ -27,13 +27,13 @@ int main(void)
 	for(i=2;i<=a;i++)
 		A[i]='1';
 	clock_t t = clock ();
-	for(i=2;i<=a;i++)
+	for(i=2;i<=m;i++)
 	{
 		if(A[i]=='1')
 		{
 			for(j=i;j*i<=a;j++)
 			{
-				A[j]='0';
+				A[j*i]='0';
 			}
 		}
 	}
