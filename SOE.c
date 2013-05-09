@@ -21,19 +21,23 @@ int main(void)
 	a = power(10,n);
 	char* A;
 	A = malloc(sizeof(char)*a);
-	unsigned long long int i,j,m;
+	unsigned long long int i,j,m,z;
 	m=sqrt(a);
 	A[0]=A[1]='0';
-	for(i=2;i<=a;i++)
+	A[2]='1';
+	for(i=3;i<=a;i+=2)
+	{
 		A[i]='1';
+		A[i+1]='0';
+	}
 	clock_t t = clock ();
-	for(i=2;i<=m;i++)
+	for(i=3;i<=m;i+=2)
 	{
 		if(A[i]=='1')
 		{
-			for(j=i;j*i<=a;j++)
+			for(j=i;(z=j*i)<=a;j+=2)
 			{
-				A[j*i]='0';
+				A[z]='0';
 			}
 		}
 	}
